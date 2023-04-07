@@ -4,7 +4,6 @@ import Modal from '@material-ui/core/Modal';
 import Fade from '@material-ui/core/Fade';
 import Button from "@mui/material/Button";
 import Backdrop from '@material-ui/core/Backdrop';
-import Typography from "@mui/material/Typography";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import "./ContentModal.css";
 import axios from "axios";
@@ -12,7 +11,6 @@ import {   img_500,
   unavailable,
   unavailableLandscape, } from "../../config/config"
   import Carousel from "../carousel/carousel"
-import SingleContent from "../singleContent/SingleContent";
 
 const style = {
   position: "absolute",
@@ -67,7 +65,7 @@ export default function ContentModal({ children, media_type, id }) {
   }, []);
 
   return (
-    <div>
+    <div className="content_modal">
       <Button onClick={handleOpen} className="media_content">
         {children}
       </Button>
@@ -83,8 +81,6 @@ export default function ContentModal({ children, media_type, id }) {
           timeout: 500,
         }}
         display="flex"
-        // alignItems="center"
-        // justifyContent="center"
       >
         <Fade in={open}>
          <Box sx={style}>

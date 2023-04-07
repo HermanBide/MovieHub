@@ -26,19 +26,18 @@ const Trending = () => {
     <div>
       <h4 className="pageTitle">Now Trending</h4>
       <div className="trending">
-        {data &&
-          data.map((content) => (
-            <SingleContent
-              key={content.id}
-              id={content.id}
-              poster={content.poster_path}
-              title={content.title || content.name}
-              date={content.first_air_date || content.release_date}
-              media_type={content.media_type}
-              vote_average={content.vote_average}
-              overview={content.overview}
-            />
-          ))}
+        {data?.map((content) => (
+          <SingleContent
+            key={content.id}
+            id={content.id}
+            poster={content.poster_path}
+            title={content.title || content.name}
+            date={content.first_air_date || content.release_date}
+            media_type={content.media_type}
+            vote_average={content.vote_average}
+            overview={content.overview}
+          />
+        ))}
       </div>
       <CustomPagination setPage={setPage}/>
     </div>
